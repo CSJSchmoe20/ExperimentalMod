@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @Mod.EventBusSubscriber(modid = FollowTutorial.MOD_ID, bus = Bus.MOD)
 @ObjectHolder(FollowTutorial.MOD_ID)
-public class iteminit {
+public class ItemInit {
 
     public static final Item example_item = null;
 
