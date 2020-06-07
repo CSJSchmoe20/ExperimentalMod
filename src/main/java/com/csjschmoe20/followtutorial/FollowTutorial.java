@@ -24,8 +24,15 @@ public class FollowTutorial
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    // making the modid accessible from elsewhere
+    public static final String MOD_ID = "followtutorial";
+    // creating an instance of the main class
+    public static FollowTutorial instance;
 
     public FollowTutorial() {
+        // creating an instance of the main class for convenience
+        instance = this;
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
