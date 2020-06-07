@@ -1,3 +1,6 @@
 {
-  "item.followtutorial.example_item": "Thingy"
+  "item.followtutorial.example_item": "Thingy",
+
+
+  "block.followtutorial.example_block": "Example Block"
 }
