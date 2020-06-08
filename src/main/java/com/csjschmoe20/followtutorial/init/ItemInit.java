@@ -1,6 +1,7 @@
 package com.csjschmoe20.followtutorial.init;
 import com.csjschmoe20.followtutorial.FollowTutorial;
 import com.csjschmoe20.followtutorial.FollowTutorial.TutorialItemGroup;
+import com.csjschmoe20.followtutorial.objects.items.AdvancedItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -19,6 +20,8 @@ import java.util.function.Supplier;
 public class ItemInit {
 
     public static final Item example_item = null;
+    public static final Item example_food = null;
+    public static final Item special_item = null;
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event){
@@ -32,6 +35,9 @@ public class ItemInit {
                     }
                 }, 1.0f).build()
         )).setRegistryName("example_food"));
+
+        event.getRegistry().register(new AdvancedItem(new Item.Properties().group(TutorialItemGroup.instance)).setRegistryName("advanced_item"));
+
 
     }
 
