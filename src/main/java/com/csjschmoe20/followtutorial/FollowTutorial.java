@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class FollowTutorial
 {
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     // making the modid accessible from elsewhere
     public static final String MOD_ID = "followtutorial";
     // creating an instance of the main class
