@@ -1,12 +1,12 @@
 package com.csjschmoe20.followtutorial.init;
 
 import com.csjschmoe20.followtutorial.FollowTutorial;
+import com.csjschmoe20.followtutorial.FollowTutorial.TutorialItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +27,6 @@ public class BlockInit {
 
     @SubscribeEvent
     public static void registerBlockItems(final RegistryEvent.Register<Item> event){
-        event.getRegistry().register(new BlockItem(example_block, new Item.Properties().maxStackSize(16).group(ItemGroup.BUILDING_BLOCKS)).setRegistryName("example_block"));
+        event.getRegistry().register(new BlockItem(example_block, new Item.Properties().maxStackSize(16).group(TutorialItemGroup.instance)).setRegistryName("example_block"));
     }
 }

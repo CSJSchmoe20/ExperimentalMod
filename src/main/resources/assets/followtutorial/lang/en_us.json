@@ -1,6 +1,8 @@
 {
   "item.followtutorial.example_item": "Thingy",
+  "item.followtutorial.example_food": "Water Glass",
 
 
-  "block.followtutorial.example_block": "Example Block"
+  "block.followtutorial.example_block": "Example Block",
+  "itemGroup.tutorialtab": "Tutorial Tab"
 }
