@@ -13,7 +13,7 @@
       "item": "minecraft:redstone_block"
     },
     "I": {
-      "tag": "minecraft:iron_block"
+      "item": "minecraft:iron_block"
     }
   },
   "result": {
