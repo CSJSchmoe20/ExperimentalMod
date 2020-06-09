@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LIL",
+    "IRI",
+    "LIL"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:lapis_block"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "I": {
+      "tag": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "item": "followtutorial:example_block"
+  }
+}
