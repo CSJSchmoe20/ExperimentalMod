@@ -1,6 +1,7 @@
 package com.csjschmoe20.followtutorial;
 
 import com.csjschmoe20.followtutorial.init.BlockInit;
+import com.csjschmoe20.followtutorial.init.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -27,7 +28,7 @@ import java.util.stream.Collectors;
 public class FollowTutorial
 {
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     // making the modid accessible from elsewhere
     public static final String MOD_ID = "followtutorial";
     // creating an instance of the main class
@@ -37,7 +38,7 @@ public class FollowTutorial
         // creating an instance of the main class for convenience
         instance = this;
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
         // Register the setup method for modloading
         modEventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
