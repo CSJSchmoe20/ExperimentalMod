@@ -4,5 +4,6 @@
   "item.followtutorial.advanced_item": "Rain Controller",
 
   "block.followtutorial.example_block": "Example Block",
+  "block.followtutorial.quarry_block": "Quarry",
   "itemGroup.tutorialtab": "Tutorial Tab"
 }
