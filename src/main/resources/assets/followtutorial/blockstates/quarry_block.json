@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "followtutorial:block/quarry_block" }
+  }
+}
