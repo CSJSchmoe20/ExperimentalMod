@@ -9,5 +9,5 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModTileEntityTypes {
     public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, FollowTutorial.MOD_ID);
-    public static final RegistryObject<TileEntityType<QuarryTileEntity>> QUARRY = TILE_ENTITY_TYPES.register("quarry_block", () -> TileEntityType.Builder.create(QuarryTileEntity::new, BlockInit.quarry_block).build(null));
+    public static final RegistryObject<TileEntityType<QuarryTileEntity>> QUARRY = TILE_ENTITY_TYPES.register("quarry_block", () -> TileEntityType.Builder.create(QuarryTileEntity::new, BlockInitNew.BLOCK_QUARRY.get()).build(null));
 }

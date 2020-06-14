@@ -31,6 +31,7 @@ import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("followtutorial")
+@Mod.EventBusSubscriber(modid=FollowTutorial.MOD_ID, bus= Mod.EventBusSubscriber.Bus.MOD)
 public class FollowTutorial
 {
     // Directly reference a log4j logger.
@@ -45,9 +46,10 @@ public class FollowTutorial
         instance = this;
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+
         ItemInitNew.ITEMS.register(modEventBus);
         BlockInitNew.BLOCKS.register(modEventBus);
+        ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 
         // Register the setup method for modloading
         modEventBus.addListener(this::setup);
@@ -57,23 +59,25 @@ public class FollowTutorial
         modEventBus.addListener(this::processIMC);
         // Register the doClientStuff method for modloading
         modEventBus.addListener(this::doClientStuff);
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event){
-        final IForgeRegistry<Item> registry = event.getRegistry();
-        BlockInitNew.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
-            final Item.Properties properties = new Item.Properties().group(TutorialItemGroup.instance);
-            final BlockItem blockItem = new BlockItem(block, properties);
-            blockItem.setRegistryName(block.getRegistryName());
-            registry.register(blockItem);
-        });
-        LOGGER.debug("Registered BlockItem");
 
+    @SubscribeEvent
+    public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
+        final IForgeRegistry<Item> registry = event.getRegistry();
+        BlockInitNew.BLOCKS.getEntries().stream()
+            .filter(block -> true)
+            .map(RegistryObject::get).forEach(block -> {
+                final Item.Properties properties = new Item.Properties().group(TutorialItemGroup.instance);
+                final BlockItem blockItem = new BlockItem(block, properties);
+                blockItem.setRegistryName(block.getRegistryName());
+                registry.register(blockItem);
+            });
+        LOGGER.info("Registered BlockItems");
     }
+
 
     private void setup(final FMLCommonSetupEvent event)
     {
@@ -116,7 +120,7 @@ public class FollowTutorial
         }
         @Override
         public ItemStack createIcon(){
-            return new ItemStack(BlockInit.example_block);
+            return new ItemStack(BlockInitNew.EXAMPLE_BLOCK.get());
         }
     }
 

@@ -13,7 +13,5 @@ public class BlockInitNew {
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, FollowTutorial.MOD_ID);
 
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.SAND)));
-
-    //event.getRegistry().register(new BlockQuarry().setRegistryName("quarry_block"));
     public static final RegistryObject<Block> BLOCK_QUARRY = BLOCKS.register("quarry_block", () -> new BlockQuarry());
 }

@@ -19,29 +19,29 @@ import java.util.function.Supplier;
 @ObjectHolder(FollowTutorial.MOD_ID)
 public class ItemInit {
 
-    public static final Item example_item = null;
-    public static final Item example_food = null;
-    public static final Item special_item = null;
-
-    @SubscribeEvent
-    public static void registerItems(final RegistryEvent.Register<Item> event){
-        //event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("example_item"));
-        registerItem(event, TutorialItemGroup.instance, "example_item");
-        event.getRegistry().register(new Item(new Item.Properties().group(TutorialItemGroup.instance).food(
-                new Food.Builder().hunger(6).saturation(3).setAlwaysEdible().effect(new Supplier<EffectInstance>() {
-                    @Override
-                    public EffectInstance get() {
-                        return new EffectInstance(Effects.REGENERATION, 100, 3);
-                    }
-                }, 1.0f).build()
-        )).setRegistryName("example_food"));
-
-        event.getRegistry().register(new AdvancedItem(new Item.Properties().group(TutorialItemGroup.instance)).setRegistryName("advanced_item"));
-
-
-    }
-
-    public static void registerItem(final RegistryEvent.Register<Item> event, ItemGroup group, String registry_name){
-        event.getRegistry().register(new Item(new Item.Properties().group(group)).setRegistryName(registry_name));
-    }
+//    public static final Item example_item = null;
+//    public static final Item example_food = null;
+//    public static final Item special_item = null;
+//
+//    @SubscribeEvent
+//    public static void registerItems(final RegistryEvent.Register<Item> event){
+//        //event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("example_item"));
+//        registerItem(event, TutorialItemGroup.instance, "example_item");
+//        event.getRegistry().register(new Item(new Item.Properties().group(TutorialItemGroup.instance).food(
+//                new Food.Builder().hunger(6).saturation(3).setAlwaysEdible().effect(new Supplier<EffectInstance>() {
+//                    @Override
+//                    public EffectInstance get() {
+//                        return new EffectInstance(Effects.REGENERATION, 100, 3);
+//                    }
+//                }, 1.0f).build()
+//        )).setRegistryName("example_food"));
+//
+//        event.getRegistry().register(new AdvancedItem(new Item.Properties().group(TutorialItemGroup.instance)).setRegistryName("advanced_item"));
+//
+//
+//    }
+//
+//    public static void registerItem(final RegistryEvent.Register<Item> event, ItemGroup group, String registry_name){
+//        event.getRegistry().register(new Item(new Item.Properties().group(group)).setRegistryName(registry_name));
+//    }
 }
